@@ -1,0 +1,14 @@
+{
+  "name": "vendor_name/request-php-api",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "thogs",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  }
+}
