@@ -1,14 +1,28 @@
 {
-  "name": "vendor_name/request-php-api",
+  "name": "thoggs/request-php-api",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "thogs",
-      "email": "email@example.com"
+      "name": "Thiago Rodrigues",
+      "email": "thiagothogs@gmail.com",
+      "role": "Developer",
+      "homepage": "https://conforms.com.br"
     }
   ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Config.php"
+    ]
+  },
   "require": {
+    "phpmailer/phpmailer": "v6.1.*"
   }
 }
