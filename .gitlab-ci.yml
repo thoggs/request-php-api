@@ -4,7 +4,7 @@ image: tetraweb/php:7.4
 # Select folders to cache...
 cache:
   paths:
-    - vendor/
+   - vendor/
 
 services:
   - mysql
