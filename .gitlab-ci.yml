@@ -3,7 +3,7 @@ stages:
   - testing
   - security
 
-image: php:7.4
+image: composer
 
 before_script:
   - apt-get update
