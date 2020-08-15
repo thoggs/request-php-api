@@ -3,7 +3,7 @@ stages:
   - testing
   - security
 
-image: tetraweb/php7.4
+image: php7.4
 
 before_script:
   - apt-get update
