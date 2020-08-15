@@ -26,6 +26,5 @@
     "phpmailer/phpmailer": "v6.1.*"
   },
   "require-dev": {
-    "phpunit/phpunit": "9.3.*"
   }
 }
