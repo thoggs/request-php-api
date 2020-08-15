@@ -1,6 +1,5 @@
 stages:
   - preparation
-  - testing
   - security
 
 image: php:7.4
@@ -29,18 +28,6 @@ composer:
   cache:
     paths:
       - vendor/
-
-phpunit:
-  stage: testing
-  dependencies:
-    - composer
-  script:
-    - php -v
-    - ./vendor/phpunit/phpunit/phpunit --version
-    - php -d short_open_tag=off ./vendor/phpunit/phpunit/phpunit -v --colors=never --stderr
-  artifacts:
-    expire_in: 1 days
-    when: on_failure
 
 sensiolabs:
   stage: security
