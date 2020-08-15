@@ -3,7 +3,14 @@ stages:
   - testing
   - security
 
-image: composer
+image: tetraweb/php
+
+before_script:
+  - apt-get update
+  - apt-get install zip unzip
+  - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  - php composer-setup.php
+  - php -r "unlink('composer-setup.php');"
 
 cache:
   key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
@@ -16,6 +23,7 @@ composer:
   artifacts:
     paths:
       - vendor/
+      - .env
     expire_in: 1 days
     when: always
   cache:
@@ -37,16 +45,6 @@ phpunit:
   artifacts:
     expire_in: 1 days
     when: on_failure
-
-phpcpd:
-  stage: testing
-  script:
-    - test -f phpcpd.phar || curl -L https://phar.phpunit.de/phpcpd.phar -o phpcpd.phar
-    - php phpcpd.phar app/ --min-lines=50
-  dependencies: []
-  cache:
-    paths:
-      - phpcpd.phar
 
 sensiolabs:
   stage: security
