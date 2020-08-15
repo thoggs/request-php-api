@@ -3,7 +3,7 @@ stages:
   - testing
   - security
 
-image: php7.4
+image: php:7.4
 
 before_script:
   - apt-get update
