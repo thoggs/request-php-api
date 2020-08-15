@@ -1,5 +1,5 @@
 # Select a base image to start working with...
-image: tetraweb/php:7.4
+image: php:7.4
 
 # Select folders to cache...
 cache:
@@ -21,7 +21,7 @@ phpcs:
 
 php-7.4:
   type: tests
-  image: tetraweb/php:7.4
+  image: php:7.4
   script:
     - php vendor/bin/phpunit --colors=never --coverage-text
   allow_failure: true
