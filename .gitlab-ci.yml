@@ -29,7 +29,6 @@ phpunit:
   stage: testing
   # Download the artifacts for these jobs
   dependencies:
-    - build-assets
     - composer
   script:
     - php -v
