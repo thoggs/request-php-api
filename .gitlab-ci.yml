@@ -1,0 +1,27 @@
+# Select a base image to start working with...
+image: tetraweb/php:7.4
+
+# Select folders to cache...
+cache:
+  paths:
+    - vendor/
+
+services:
+  - mysql
+
+# Define pipline stages
+stages:
+  - syntax
+  - tests
+
+phpcs:
+  stage: syntax
+  script:
+    - ./vendor/bin/phpcs --error-severity=1 --warning-severity=8 --extensions=php
+
+php-7.4:
+  type: tests
+  image: tetraweb/php:7.4
+  script:
+    - php vendor/bin/phpunit --colors=never --coverage-text
+  allow_failure: true
