@@ -3,7 +3,7 @@ stages:
   - testing
   - security
 
-image: tetraweb/php
+image: tetraweb/php7.4
 
 before_script:
   - apt-get update
@@ -43,8 +43,6 @@ phpunit:
     - php -d short_open_tag=off ./vendor/phpunit/phpunit/phpunit -v --colors=never --stderr
     - sudo cp /usr/local/etc/php/conf.d/docker-php-ext-xdebug.bak /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
   artifacts:
-    paths:
-      - ./storage/logs # for debugging
     expire_in: 1 days
     when: on_failure
 
