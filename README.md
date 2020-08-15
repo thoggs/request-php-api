@@ -1,3 +1,3 @@
-# Request - PHP_API 
+# Request - PHP-API 
 
 Request API PHP Example
