@@ -3,7 +3,7 @@ stages:
   - testing
   - security
 
-image: edbizarro/gitlab-ci-pipeline-php:7.4
+image: php:7.4
 
 cache:
   key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
