@@ -3,7 +3,14 @@ stages:
   - testing
   - security
 
-image: php:7.4
+image: tetraweb/php
+
+before_script:
+  - apt-get update
+  - apt-get install zip unzip
+  - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  - php composer-setup.php
+  - php -r "unlink('composer-setup.php');"
 
 cache:
   key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
